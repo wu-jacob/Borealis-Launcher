@@ -36,44 +36,42 @@ class _HomepageState extends State<Homepage> {
 
     return Scaffold(
         body: Container(
-            color: Colors.black,
+            decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/testwallpaper.png'),
+                        fit: BoxFit.fill,
+                      )
+                    ),
             child: PageView(
               children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/testwallpaper.png'),
-                    )
-                  ),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 150.0,
-                          ),
-                          child: Text(
-                            formattedTime,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 40.0,
-                            ),
+                Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 150.0,
+                        ),
+                        child: Text(
+                          formattedTime,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 40.0,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 20.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 20.0,
+                        ),
+                        child: Text(
+                          formattedDate,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
                           ),
-                          child: Text(
-                            formattedDate,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 FutureBuilder(
